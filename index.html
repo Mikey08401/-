@@ -4,47 +4,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Natural Deduction System for Propositional Logic</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        header { background: #4CAF50; color: white; padding: 10px 0; text-align: center; }
-        .container { margin: 20px auto; max-width: 800px; }
-        .button { margin: 5px; padding: 10px 15px; background: #008CBA; color: white; border: none; cursor: pointer; }
-        #workspace { border: 1px solid #ccc; padding: 10px; min-height: 200px; }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>Natural Deduction System</h1>
-        <p>Your AI assistant for propositional logic</p>
+        <h1>Natural Deduction System for Propositional Logic</h1>
     </header>
-    <div class="container">
-        <h2>Inference Workspace</h2>
-        <div id="workspace"></div>
-        <button class="button" id="start-level-mode">Start Level Mode</button>
-        <button class="button" id="start-custom-mode">Start Custom Mode</button>
-        <button class="button" id="rules-guide">Rules Guide</button>
-        <div id="ai-assistant">
-            <h3>AI Assistant</h3>
-            <p>Ask me anything about propositional logic!</p>
-            <input type="text" id="ai-input" placeholder="Type your question..."><br>
-            <button class="button" id="ai-submit">Ask</button>
-            <div id="ai-response"></div>
+    <main>
+        <div id="inference-workspace">
+            <h2>Inference Workspace</h2>
+            <div id="proof-area"></div>
+            <button id="validate-proof">Validate Proof</button>
+            <button id="ai-hint">Get Hint</button>
+            <button id="ai-explain">Explain</button>
         </div>
-    </div>
-    <script>
-        document.getElementById('start-level-mode').onclick = function() {
-            alert('Level Mode Started!');
-        };
-        document.getElementById('start-custom-mode').onclick = function() {
-            alert('Custom Mode Started!');
-        };
-        document.getElementById('rules-guide').onclick = function() {
-            alert('Showing Rules Guide!');
-        };
-        document.getElementById('ai-submit').onclick = function() {
-            const input = document.getElementById('ai-input').value;
-            document.getElementById('ai-response').innerText = 'AI Response: ' + input;
-        };
-    </script>
+        <div id="mode-selector">
+            <h2>Select Mode</h2>
+            <button id="level-mode">Level Mode</button>
+            <button id="custom-mode">Custom Mode</button>
+        </div>
+        <div id="levels" style="display:none;">
+            <h2>Level Mode</h2>
+            <ul>
+                <li>Level 1</li>
+                <li>Level 2</li>
+                <li>Level 3</li>
+                <li>Level 4</li>
+                <li>Level 5</li>
+                <li>Level 6</li>
+            </ul>
+        </div>
+    </main>
+    <footer>
+        <p>Progress will be saved locally.</p>
+    </footer>
 </body>
 </html>
+
+<script>
+    // JavaScript code to implement inference rules and functionalities
+    const inferenceRules = {
+        "∧+": function() {},
+        "∧-": function() {},
+        "∨+": function() {},
+        "∨-": function() {},
+        "→+": function() {},
+        "→-": function() {},
+        "¬+": function() {},
+        "¬-": function() {},
+        "RAA": function() {},
+        "DNE": function() {}
+    };
+
+    document.getElementById('validate-proof').addEventListener('click', function() {
+        // Validate proof logic here
+    });
+
+    document.getElementById('ai-hint').addEventListener('click', function() {
+        // AI hint logic here
+    });
+
+    document.getElementById('ai-explain').addEventListener('click', function() {
+        // AI explain logic here
+    });
+
+    document.getElementById('level-mode').addEventListener('click', function() {
+        document.getElementById('levels').style.display = 'block';
+    });
+
+    document.getElementById('custom-mode').addEventListener('click', function() {
+        // Implement custom mode logic
+    });
+</script>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+        color: #333;
+    }
+    header {
+        background: #333;
+        color: white;
+        padding: 10px 0;
+        text-align: center;
+    }
+    main {
+        margin-top: 20px;
+        padding: 20px;
+        background: white;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    button {
+        margin: 5px;
+        padding: 10px;
+        background: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    button:hover {
+        background: #0056b3;
+    }
+</style>
