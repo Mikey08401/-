@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natural Deduction System for Propositional Logic</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        header { background: #4CAF50; color: white; padding: 10px 0; text-align: center; }
+        .container { margin: 20px auto; max-width: 800px; }
+        .button { margin: 5px; padding: 10px 15px; background: #008CBA; color: white; border: none; cursor: pointer; }
+        #workspace { border: 1px solid #ccc; padding: 10px; min-height: 200px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Natural Deduction System</h1>
+        <p>Your AI assistant for propositional logic</p>
+    </header>
+    <div class="container">
+        <h2>Inference Workspace</h2>
+        <div id="workspace"></div>
+        <button class="button" id="start-level-mode">Start Level Mode</button>
+        <button class="button" id="start-custom-mode">Start Custom Mode</button>
+        <button class="button" id="rules-guide">Rules Guide</button>
+        <div id="ai-assistant">
+            <h3>AI Assistant</h3>
+            <p>Ask me anything about propositional logic!</p>
+            <input type="text" id="ai-input" placeholder="Type your question..."><br>
+            <button class="button" id="ai-submit">Ask</button>
+            <div id="ai-response"></div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('start-level-mode').onclick = function() {
+            alert('Level Mode Started!');
+        };
+        document.getElementById('start-custom-mode').onclick = function() {
+            alert('Custom Mode Started!');
+        };
+        document.getElementById('rules-guide').onclick = function() {
+            alert('Showing Rules Guide!');
+        };
+        document.getElementById('ai-submit').onclick = function() {
+            const input = document.getElementById('ai-input').value;
+            document.getElementById('ai-response').innerText = 'AI Response: ' + input;
+        };
+    </script>
+</body>
+</html>
